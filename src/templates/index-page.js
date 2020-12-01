@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import ChitChat from '../components/ChitChat'
 
 export const IndexPageTemplate = ({
   image,
@@ -16,6 +17,7 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
+    <ChitChat message="hello" />
     <div
       className="full-width-image margin-top-0"
       style={{
