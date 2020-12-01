@@ -1,31 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-    };
-  }
 
-  toggleHamburger = () => {
+
+function Navbar(props){
+  const [active, setActive] = useState(false)
+
+  const toggleHamburger = () => {
     // toggle the active boolean in the state
-    console.log(this.state.active);
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-      }
-    );
+    setActive(!active);
   };
+  
 
-  render() {
     return (
       <nav className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -36,7 +24,7 @@ const Navbar = class extends React.Component {
                 aria-expanded="false"
               >
                 <span className="sr-only">Open main menu</span>
-                <svg onClick={this.toggleHamburger}
+                <svg onClick={toggleHamburger}
                   className="block h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -90,7 +78,7 @@ const Navbar = class extends React.Component {
                     Dashboard
                     Team
                   </a>
-                  <a
+                  <a>
                     href="#"
                     className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                   >
@@ -127,7 +115,7 @@ const Navbar = class extends React.Component {
             </div>
           </div>
         </div>
-        <div className={`sm:hidden ${this.state.active ? "block" : "hidden"}`}>
+        <div className={`sm:hidden ${active ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <a
               href="#"
@@ -158,6 +146,5 @@ const Navbar = class extends React.Component {
       </nav>
     );
   }
-};
 
 export default Navbar;
