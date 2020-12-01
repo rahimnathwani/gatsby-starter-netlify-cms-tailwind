@@ -78,7 +78,7 @@ function Navbar(props){
                     Dashboard
                     Team
                   </a>
-                  <a>
+                  <a
                     href="#"
                     className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                   >
